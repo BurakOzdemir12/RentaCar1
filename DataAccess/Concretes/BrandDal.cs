@@ -1,6 +1,6 @@
-﻿using DataAccess.Abstacts;
+﻿using Core.DataAccess;
+using DataAccess.Abstacts;
 using DataAccess.Contexts;
-using DataAccess.Repository;
 using Entities.Concretes;
 using System;
 using System.Collections.Generic;

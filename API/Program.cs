@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IModelService,ModelManager>();
 builder.Services.AddScoped<IModelDal, ModelDal>();
 
-
+builder.Services.AddCors(opt=> opt.AddDefaultPolicy(p=> { p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }));
 
 
 var app = builder.Build();
@@ -31,4 +31,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseCors(opt =>
+    opt.WithOrigins("http://localhost:4200")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials());
 app.Run();

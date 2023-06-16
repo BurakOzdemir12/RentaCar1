@@ -15,26 +15,14 @@ namespace Business.Rules
         //we ask to database this questions like is there same model name?
 
         IModelDal _modelDal;
-        IBrandDal _brandDal;
+       
         
         public ModelBusinessRules(IModelDal modelDal) 
         {
         _modelDal = modelDal;
         }
         /**/
-        public ModelBusinessRules(IBrandDal brandDal)
-        {
-            _brandDal = brandDal;
-        }
-        public void BrandNameCanNotBeDuplicated(string brandName) 
-        {
-            Brand? brand = _brandDal.Get(m => m.Name == brandName);
-
-            if (brand != null)
-            {
-                throw new Exception("brand Name already exists");
-            }
-        }
+       
         
         public void ModelNameCanNotBeDuplicated(string modelName)
         {

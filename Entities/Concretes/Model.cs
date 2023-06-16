@@ -1,4 +1,5 @@
-﻿using Entities.Abstracts;
+﻿
+using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,6 @@ namespace Entities.Concretes
         public double UnitPrice{ get; set; }
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
-       
+       //c
     }
 }

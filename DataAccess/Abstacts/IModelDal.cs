@@ -1,4 +1,4 @@
-﻿using DataAccess.Repository;
+﻿using Core.DataAccess;
 using Entities.Concretes;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstacts
 {
-    
+
     //interface can extend an interface
     public interface IModelDal:IEntityRepository<Model> //ımodeldal has the crud operations
     {

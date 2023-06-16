@@ -17,8 +17,7 @@ namespace Business.Abstracts
        
         void Add(CreateModelRequest createModelRequest);
         
-        void Update(CreateModelRequest createModelRequest);
-        void Delete(CreateModelRequest createModelRequest);
+     
          
         //GetAllByName; 
     }

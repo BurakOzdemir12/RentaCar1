@@ -34,7 +34,6 @@ namespace Business.Concretes
           
             rules.ModelNameCanNotBeDuplicated(createModelRequest.Name);
            
-
             //mapping
             Model model = new Model
             {
@@ -46,43 +45,16 @@ namespace Business.Concretes
             };
 
             _modelDal.Add(model);
-            
+
         }
+
+
+
         /* */
 
-        public void Delete(CreateModelRequest createModelRequest)
-        {
-            Model model = new Model
-            {
-                Name = createModelRequest.Name,
-                Description = createModelRequest.Description,
-                UnitPrice = createModelRequest.UnitPrice,
-                BrandId = createModelRequest.BrandId,
-                
-            };
-            _modelDal.Delete(model);
-        }
 
         // never make an instance in a business layer for dal layer
         // ModelDal modelDal=new ModelDal();
-
-       
-
-        public void Update(CreateModelRequest createModelRequest)
-        {
-            rules.ModelNameCanNotBeDuplicated(createModelRequest.Name);
-
-            Model model = new Model
-            {
-                Name = createModelRequest.Name,
-                Description = createModelRequest.Description,
-                UnitPrice = createModelRequest.UnitPrice,
-                BrandId = createModelRequest.BrandId,
-            };
-            
-            _modelDal.Update(model);
-        }
-        
 
         public List<GetModelResponse> GetAll()
         {
@@ -99,10 +71,12 @@ namespace Business.Concretes
                 getModelResponse.BrandName=model.Brand.Name;
 
                 getModelResponses.Add(getModelResponse);
-                
+
+               
             }
             return getModelResponses;
         }
+
 
         public List<GetModelResponse> GetAll(string modelName)
         {
@@ -124,5 +98,6 @@ namespace Business.Concretes
             return getModelResponses;
         }
 
+       
     }
 }
